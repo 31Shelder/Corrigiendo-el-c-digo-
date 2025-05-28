@@ -1,8 +1,9 @@
-const baseEndpoint = 'https://api.github.com';
+const baseEndpoint = `https://api.github.com`;//cambie las comillas por esta`//
 const usersEndpoint = '${baseEndpoint}/users'; // midifique las comillas simples//
-const $n = document.querySelector('#name'); // le puse # al selector//
-const $b = document.querySelector('#blog');
+const $n = document.querySelector('.name'); // le puse . al selector//
+const $b = document.querySelector('.blog');
 const $l = document.querySelector('.location');
+<p class="location">Cargando ubicación...</p> // agregar la locación//
 
 async function displayUser(username) {
   try {
@@ -13,8 +14,7 @@ async function displayUser(username) {
     $n.textContent = data.name || 'Nombre no disponible';
     $b.textContent = data.blog || 'Blog no disponible';
     $l.textContent = data.location || 'Ubicación no disponible';
-  } catch (error) {
-    handleError(error);
+  } catch (error) { handleError(error);
   }
 }
 
